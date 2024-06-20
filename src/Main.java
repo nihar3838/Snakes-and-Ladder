@@ -1,5 +1,4 @@
-<<<<<<< UC2_rollDice
-=======
+
 import java.lang.Math;
 public class Snake_ladder {
     int WIN_CONDITION = 100;
@@ -51,4 +50,3 @@ public class Snake_ladder {
         }
     }
 }
->>>>>>> master
