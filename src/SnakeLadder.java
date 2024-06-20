@@ -1,5 +1,5 @@
 import java.lang.Math;
-public class SnakeLadder {
+public class Snake_ladder {
     public static int Diceroll(){
         int diceroll = (int)(Math.random()*6) +1;
         return diceroll;
