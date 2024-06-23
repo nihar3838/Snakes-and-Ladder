@@ -14,30 +14,35 @@ public class SnakeLadder {
 
     public static void main(String[] args) {
         int WIN_CONDITION = 100;
-
-        int player_position = 1;
-        int prev_pos=1;
-        while (player_position < WIN_CONDITION) {
+        int COUNT =0;
+        int PLAYER_POSITION = 1;
+        int PREV_POS =1;
+        while (PLAYER_POSITION < WIN_CONDITION) {
             int dice_roll = Diceroll();
             int option = Option();
-            if(player_position+dice_roll >WIN_CONDITION){
-                player_position =prev_pos;
+            if(PLAYER_POSITION +dice_roll >WIN_CONDITION){
+                PLAYER_POSITION = PREV_POS;
+                COUNT++;
             }
             if (option == 1) {
-                player_position += dice_roll;
+                PLAYER_POSITION += dice_roll;
+                COUNT++;
             }
             if (option == 2) {
-                player_position -= dice_roll;
+                PLAYER_POSITION -= dice_roll;
+                COUNT++;
             }
-            if(player_position<0){
-                player_position =0;
+            if(PLAYER_POSITION <0){
+                PLAYER_POSITION =0;
+                COUNT++;
             }
 
             System.out.println("Dice roll is " + dice_roll);
             System.out.println(option);
-            System.out.println("Player Position is " + player_position);
-            if(player_position==WIN_CONDITION){
+            System.out.println("Player Position is " + PLAYER_POSITION);
+            if(PLAYER_POSITION ==WIN_CONDITION){
                 System.out.println("Player Win");
+                System.out.println("Dice Was Played " + COUNT + " Times");
                 break;
             }
 
