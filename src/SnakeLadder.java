@@ -1,25 +1,26 @@
 import java.lang.Math;
 public class SnakeLadder {
-    int win_position = 100;
+    int WIN_CONDITION = 100;
 
     public static int Diceroll() {
-        int diceroll = (int) (Math.random() * 6) + 1;
-        return diceroll;
+        return (int) (Math.random() * 6) + 1;
+
     }
 
     public static int Option() {
-        int option = (int) (Math.random() * 3) + 1;
-        return option;
+        return (int) (Math.random() * 3) + 1;
+
     }
 
     public static void main(String[] args) {
-        int Win_condition = 100;
+        int WIN_CONDITION = 100;
+
         int player_position = 1;
         int prev_pos=1;
-        while (player_position < 100) {
+        while (player_position < WIN_CONDITION) {
             int dice_roll = Diceroll();
             int option = Option();
-            if(player_position+dice_roll >100){
+            if(player_position+dice_roll >WIN_CONDITION){
                 player_position =prev_pos;
             }
             if (option == 1) {
@@ -31,10 +32,15 @@ public class SnakeLadder {
             if(player_position<0){
                 player_position =0;
             }
-            if (option == 3) ;
+
             System.out.println("Dice roll is " + dice_roll);
             System.out.println(option);
             System.out.println("Player Position is " + player_position);
+            if(player_position==WIN_CONDITION){
+                System.out.println("Player Win");
+                break;
+            }
+
         }
     }
 }
